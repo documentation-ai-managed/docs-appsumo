@@ -1,0 +1,112 @@
+---
+title: AppSumo Changelog
+description: Track the latest updates and improvements to the AppSumo platform, including new features and enhancements for users.
+---
+
+## Recent Updates
+
+<Callout kind="info">
+  Stay informed about the latest enhancements to AppSumo. You receive automatic notifications for major releases via email when you opt-in to updates in your account settings.
+</Callout>
+
+<Update label="2024-10-15" description="v2.3.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added new deal categories: AI Tools and No-Code Builders to help you discover emerging software faster.
+- Introduced SHOP SUMO DAY calendar integration, letting you schedule deal alerts directly in your productivity apps.
+
+## Improvements
+
+- Enhanced UI with faster deal loading times, reducing page renders by `>40%`.
+- Improved search filters for better matching of productivity and marketing tools.
+
+## Bug Fixes
+
+- Fixed cart persistence issues during browser refreshes.
+- Resolved security patch for webhook endpoints.
+
+</Update>
+
+<Update label="2024-09-20" description="v2.2.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Launched lifetime deal badges with one-click purchase previews.
+- Added seller dashboard analytics for tracking deal performance.
+
+## Improvements
+
+- Optimized mobile responsiveness for deal browsing on all devices.
+- Streamlined checkout process to complete purchases in under 30 seconds.
+
+## Bug Fixes
+
+- Patched authentication token refresh errors.
+- Corrected email notification delays for deal expirations.
+
+</Update>
+
+<Update label="2024-08-10" description="v2.1.0" tags={["improvement", "security"]}>
+
+## New Features
+
+- Integrated webhook support for real-time deal notifications to your systems.
+
+## Improvements
+
+- Upgraded performance monitoring, ensuring `99.9%` uptime for peak deal days.
+- Refined recommendation engine based on your purchase history.
+
+## Bug Fixes & Security
+
+- Fixed cross-site scripting vulnerabilities in user profiles.
+- Applied patches for dependency updates across the platform.
+
+</Update>
+
+## Stay Updated
+
+Follow these steps to ensure you never miss an update.
+
+<Steps>
+  <Step title="Enable Notifications" icon="bell">
+    Go to your account settings at `https://appsumo.com/account/notifications` and toggle on changelog emails and in-app alerts.
+  </Step>
+  <Step title="Subscribe to RSS" icon="rss">
+    Add the changelog feed: `https://appsumo.com/changelog/rss.xml` to your reader.
+  </Step>
+  <Step title="Webhook Setup" icon="zap">
+    Configure webhooks for automated updates.
+
+````javascript
+// Example webhook payload handler
+app.post('/appsumo-webhook', (req, res) => {
+  const { event, data } = req.body;
+  if (event === 'new_release') {
+    console.log(`New version: ${data.version}`);
+  }
+  res.status(200).send('OK');
+});
+````
+
+  </Step>
+</Steps>
+
+## Quick Links
+
+<Columns cols={3}>
+  <Card title="Introduction" icon="book-open" href="/introduction">
+    Learn about AppSumo deals and how to get started.
+  </Card>
+  <Card title="Quickstart" icon="rocket" href="/quickstart">
+    Browse your first deal in minutes.
+  </Card>
+  <Card title="Authentication" icon="shield" href="/authentication">
+    Secure your account and API access.
+  </Card>
+</Columns>
+
+<Callout kind="tip">
+  Check back weekly for new releases. Use the search bar above to find specific updates.
+</Callout>
